@@ -1,9 +1,6 @@
 "use client";
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FormEvent } from "react";
 import { useState } from "react";
 
 export default function EditProfileForm({ profile }: { profile: any }) {
@@ -27,7 +24,7 @@ export default function EditProfileForm({ profile }: { profile: any }) {
     profileUpdate;
 
     //Generar QR
-  const url = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://localhost:3000/profile/${profile.slug}`
+  const url = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://card-businessmm.vercel.app/profile/${profile.slug}`
   profile.qr = url;
 
   const onChange = (e: any) => {
